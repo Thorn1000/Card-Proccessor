@@ -96,7 +96,8 @@ with open(NewListOfCards,"a+") as f:
                 if isJunk:
                     print(f"{Fore.RED}{cardid} Junk with a MV of: {MARKET_VALUE}, highest_bid: {highest_bid}, rarity:{CATEGORY}")
                     print(Style.RESET_ALL)
-                    f.writelines(f"https://www.nationstates.net/nation={each}/page=ajax3/a=junkcard/card={cardid}/season={season}/autoclose=1")
+                    f.writelines((
+                        f"https://www.nationstates.net/nation={each}/page=ajax3/a=junkcard/card={cardid}/season={season}/autoclose=1") + '\n')
                 else:
                     print(f"{Fore.GREEN}SELL card with a MV of: {MARKET_VALUE}, highest_bid: {highest_bid}, rarity:{CATEGORY}")
                     print(Style.RESET_ALL)
